@@ -1,0 +1,12 @@
+[Desktop Entry]
+Name=Calendar & Schedule
+Exec=cosmic-calendar-schedule
+Terminal=false
+Type=Application
+StartupNotify=true
+NotShowIn=COSMIC
+Icon=com.bogdart.CalendarSchedule
+Categories=COSMIC
+Keywords=Calendar;Schedule;Meeting;Time;Panel;Applet;Weather;Forecast;World Clock;Timezone;
+X-CosmicApplet=true
+X-CosmicHoverPopup=Auto

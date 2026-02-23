@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>com.bogdart.CalendarSchedule</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0-only</project_license>
+  <project_group>COSMIC</project_group>
+
+  <name>Calendar &amp; Schedule</name>
+  <summary>Date, time, calendar, weather, and world clocks in the COSMIC panel</summary>
+
+  <developer id="com.bogdart">
+    <name>Artem Bogdanov</name>
+  </developer>
+
+  <description>
+    <p>A panel applet for the COSMIC desktop that displays the current date and time, with a popup showing a calendar grid, your upcoming events, weather, and world clocks.</p>
+    <p>Features include calendar navigation, day-by-day event viewing, current weather with 4-day forecast, up to 3 world clocks, and flexible display options.</p>
+    <p>Uses Evolution Data Server (EDS) to read user calendars configured via GNOME Online Accounts or Evolution. Weather data provided by Open-Meteo — no account or API key needed.</p>
+  </description>
+
+  <icon type="stock">com.bogdart.CalendarSchedule</icon>
+
+  <url type="homepage">https://bogdart.com</url>
+  <url type="bugtracker">https://github.com/bogdart/calendar-schedule-cosmic/issues</url>
+
+  <content_rating type="oars-1.1" />
+
+  <launchable type="desktop-id">com.bogdart.CalendarSchedule.desktop</launchable>
+
+  <provides>
+    <id>com.system76.CosmicApplet</id>
+    <binary>cosmic-calendar-schedule</binary>
+  </provides>
+
+  <categories>
+    <category>Utility</category>
+  </categories>
+
+  <keywords>
+    <keyword>calendar</keyword>
+    <keyword>schedule</keyword>
+    <keyword>meeting</keyword>
+    <keyword>time</keyword>
+    <keyword>date</keyword>
+    <keyword>panel</keyword>
+    <keyword>applet</keyword>
+    <keyword>weather</keyword>
+    <keyword>forecast</keyword>
+    <keyword>world clock</keyword>
+    <keyword>timezone</keyword>
+  </keywords>
+
+  <releases>
+    <release version="0.1.1" date="2026-02-23">
+      <description>
+        <p>Initial release with core features:</p>
+        <ul>
+          <li>Date and time display in panel</li>
+          <li>Calendar grid with month navigation</li>
+          <li>Day-by-day event viewing</li>
+          <li>Calendar color indicators</li>
+          <li>Flexible time display and filtering options</li>
+          <li>Current weather and 4-day forecast</li>
+          <li>Up to 3 world clocks</li>
+        </ul>
+      </description>
+    </release>
+  </releases>
+</component>

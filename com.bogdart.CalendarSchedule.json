@@ -1,0 +1,53 @@
+{
+    "id": "com.bogdart.CalendarSchedule",
+    "runtime": "org.freedesktop.Platform",
+    "runtime-version": "24.08",
+    "sdk": "org.freedesktop.Sdk",
+    "sdk-extensions": [
+        "org.freedesktop.Sdk.Extension.rust-stable"
+    ],
+    "command": "cosmic-calendar-schedule",
+    "finish-args": [
+        "--share=ipc",
+        "--share=network",
+        "--socket=fallback-x11",
+        "--socket=wayland",
+        "--device=dri",
+        "--talk-name=org.gnome.evolution.dataserver.Calendar8",
+        "--talk-name=org.gnome.evolution.dataserver.Sources5",
+        "--talk-name=org.gnome.OnlineAccounts",
+        "--talk-name=org.freedesktop.portal.Desktop",
+        "--system-talk-name=org.freedesktop.login1",
+        "--filesystem=xdg-config/cosmic:rw",
+        "--filesystem=xdg-config/evolution:ro"
+    ],
+    "build-options": {
+        "append-path": "/usr/lib/sdk/rust-stable/bin",
+        "env": {
+            "RUST_BACKTRACE": "1"
+        }
+    },
+    "modules": [
+        {
+            "name": "cosmic-calendar-schedule",
+            "buildsystem": "simple",
+            "build-commands": [
+                "tar xf vendor.tar",
+                "mkdir -p .cargo",
+                "cp vendor-config.toml .cargo/config.toml",
+                "cargo build --release --frozen --offline --verbose",
+                "install -Dm755 target/release/cosmic-calendar-schedule /app/bin/cosmic-calendar-schedule",
+                "install -Dm644 resources/app.desktop /app/share/applications/com.bogdart.CalendarSchedule.desktop",
+                "install -Dm644 resources/app.metainfo.xml /app/share/metainfo/com.bogdart.CalendarSchedule.metainfo.xml",
+                "install -Dm644 resources/icon.svg /app/share/icons/hicolor/scalable/apps/com.bogdart.CalendarSchedule.svg",
+                "install -Dm644 resources/icon-symbolic.svg /app/share/icons/hicolor/symbolic/apps/com.bogdart.CalendarSchedule-symbolic.svg"
+            ],
+            "sources": [
+                {
+                    "type": "dir",
+                    "path": "."
+                }
+            ]
+        }
+    ]
+}

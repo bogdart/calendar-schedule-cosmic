@@ -1,0 +1,10 @@
+<svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+  <!-- Clock circle -->
+  <ellipse cx="8" cy="8" rx="7" ry="7" fill="none" stroke="currentColor" stroke-width="1.5"/>
+  <!-- Hour hand -->
+  <path d="M8,8L11.5,4.5" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round"/>
+  <!-- Minute hand -->
+  <path d="M8,8L8,3" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round"/>
+  <!-- Arrow pointing to clock -->
+  <path d="M2.5,7.77L6.04,7.77M6.04,7.77L4.27,6M6.04,7.77L4.27,9.54" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

@@ -1,0 +1,57 @@
+[package]
+name = "cosmic-calendar-schedule"
+version = "0.1.1"
+edition = "2024"
+authors = ["Artem Bogdanov"]
+license = "GPL-3.0-only"
+description = "COSMIC panel applet showing date, time, calendar, and schedule"
+
+[[bin]]
+name = "cosmic-calendar-schedule"
+path = "src/main.rs"
+
+[[bin]]
+name = "debug_calendars"
+path = "src/bin/debug_calendars.rs"
+
+[dependencies]
+futures-util = "0.3.31"
+i18n-embed-fl = "0.10"
+rust-embed = "8.7.2"
+tokio = { version = "1.48.0", features = ["full"] }
+zbus = { version = "3.14", features = ["tokio", "xml"] }
+calcard = "0.3"
+chrono = "0.4"
+chrono-tz = { version = "0.10", features = ["case-insensitive"] }
+localzone = { version = "0.3", features = ["win_zones"] }
+serde = { version = "1.0", features = ["derive"] }
+regex = "1"
+xdg = "3"
+tracing = "0.1"
+reqwest = { version = "0.12", default-features = false, features = ["rustls-tls", "json"] }
+serde_json = "1"
+
+# ICU for locale-aware date/time formatting
+icu = { version = "2.0", features = ["compiled_data"] }
+
+[dependencies.i18n-embed]
+version = "0.16"
+features = ["fluent-system", "desktop-requester"]
+
+[dependencies.libcosmic]
+git = "https://github.com/pop-os/libcosmic.git"
+features = [
+    "applet",
+    "applet-token",
+    "dbus-config",
+    "multi-window",
+    "process",
+    "tokio",
+    "wayland",
+]
+
+# Uncomment to test a locally-cloned libcosmic
+# [patch.'https://github.com/pop-os/libcosmic']
+# libcosmic = { path = "../libcosmic" }
+# cosmic-config = { path = "../libcosmic/cosmic-config" }
+# cosmic-theme = { path = "../libcosmic/cosmic-theme" }

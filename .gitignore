@@ -1,0 +1,29 @@
+.cargo/
+*.pdb
+**/*.rs.bk
+debug/
+target/
+vendor/
+vendor.tar
+vendor-config.toml
+
+# Debian build artifacts
+debian/*
+!debian/changelog
+!debian/control
+!debian/copyright
+!debian/rules
+!debian/source/
+
+# Debian package outputs
+*.deb
+*.ddeb
+*.buildinfo
+*.changes
+
+# Flatpak build artifacts
+*.flatpak
+builddir/
+repo/
+.flatpak-builder/
+flatpak-cargo-generator.py

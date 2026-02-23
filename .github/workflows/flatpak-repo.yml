@@ -1,0 +1,52 @@
+name: Flatpak Repository
+
+on:
+  release:
+    types: [published, edited]
+  workflow_dispatch:
+
+jobs:
+  flatter:
+    name: Build Flatpak
+    runs-on: ubuntu-latest
+    # Skip pre-releases (only applies to release events)
+    if: ${{ github.event_name == 'workflow_dispatch' || !github.event.release.prerelease }}
+    container:
+      image: ghcr.io/andyholmes/flatter/rust:24.08
+      options: --privileged
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Generate vendor archive
+        run: |
+          curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+          source "$HOME/.cargo/env"
+          cargo vendor vendor > vendor-config.toml
+          tar cf vendor.tar vendor
+          rm -rf vendor
+
+      - name: Build
+        uses: andyholmes/flatter@main
+        with:
+          files: com.bogdart.CalendarSchedule.json
+          arch: x86_64
+          upload-bundles: true
+          upload-pages-artifact: true
+
+  deploy:
+    name: Deploy to GitHub Pages
+    runs-on: ubuntu-latest
+    needs: flatter
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

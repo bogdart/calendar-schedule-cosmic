@@ -1,0 +1,169 @@
+app-title = Calendar & Schedule
+no-meetings = No upcoming meetings
+no-meetings-panel = No meetings
+no-meetings-day = No events
+loading-meetings = Loading meetings...
+settings = Settings
+open-calendar = Calendar
+back = Back
+next-meeting = Next meeting
+upcoming = Upcoming
+calendars-section = Calendars
+calendars-enabled = { $enabled }/{ $total } enabled
+calendars-none = Not configured
+display-format-section = Next meeting time
+display-format-day-time = Day & time
+display-format-relative = Relative time
+upcoming-events-section = Show additional meetings
+join = Join
+join-button-section = Join button
+join-button-visibility = Visibility
+join-button-description = When enabled, a "Join" button will appear for meetings with a detected video call URL.
+formatting-section = Formatting
+url-patterns-description = Regex patterns used to detect video call URLs in meeting descriptions and locations. These patterns apply to the Join button in both the panel and dropdown.
+panel-join-button = In panel
+popup-join-button = In popup
+join-hide = Hide
+join-show = Show always
+join-show-same-day = Show if same day
+join-show-30m = Show if within 30m
+join-show-15m = Show if within 15m
+join-show-5m = Show if within 5m
+url-patterns = URL Patterns
+add-pattern = Add pattern
+location-section = Physical location
+location-description = When enabled, the physical location of the meeting (e.g. a room name) will be shown if provided.
+panel-location = In panel
+popup-location = In popup
+location-hide = Hide
+location-show = Show always (if provided)
+location-show-same-day = Show if same day
+location-show-30m = Show if within 30m
+location-show-15m = Show if within 15m
+location-show-5m = Show if within 5m
+status-off = Off
+status-panel = In panel
+status-popup = In popup
+status-both = In panel & popup
+time-now = now
+time-in-days-hours = in { $days }d { $hours }h
+time-in-days = in { $days }d
+time-in-hours-minutes = in { $hours }h { $minutes }m
+time-in-hours = in { $hours }h
+time-in-minutes = in { $minutes }m
+panel-time-location = ({ $time } in { $location })
+panel-time = ({ $time })
+calendar-indicator-section = Indicate parent calendar
+calendar-indicator-description = When enabled, a colored dot indicating which calendar the meeting is from will be shown.
+panel-indicator = In panel
+popup-indicator = In popup
+filter-events-section = Filter events
+show-all-day-events = Show all-day events
+in-progress-section = Show in-progress meetings
+in-progress-off = Off
+in-progress-5m = <5m after start
+in-progress-10m = <10m after start
+in-progress-15m = <15m after start
+in-progress-30m = <30m after start
+panel-started = started
+time-until-section = Filter by time until
+time-until-all = All events
+time-until-3h = Within 3 hours
+time-until-6h = Within 6 hours
+time-until-same-day = Same day
+time-until-1d = Within 1 day
+time-until-2d = Within 2 days
+status-filter-section = Filter by status
+status-filter-all = All events
+status-filter-accepted = Accepted only
+status-filter-accepted-tentative = Accepted & tentative
+filter-summary-all = Show all events
+filter-summary-no-all-day = No all-day
+filter-summary-accepted = Accepted
+filter-summary-tentative = Accepted & tentative
+filter-summary-combo = { $allday }, { $status }
+additional-emails-section = My email addresses
+additional-emails-description = Add any email addresses you use for calendar invites (e.g. aliases, work email). These are used to determine your acceptance status for meetings, in addition to the email configured for each calendar.
+additional-emails-summary = { $count ->
+    [0] None configured
+    [one] { $count } email
+    *[other] { $count } emails
+}
+add-email = Add email
+filter-events-description = Filter which calendar events are shown based on event properties or your attendance status.
+panel-display = Panel
+dropdown-display = Dropdown
+configure = Configure...
+about = About
+version = Version { $version }
+author = by { $author }
+website = Website
+report-bug = Report bug
+no-calendars = No calendars
+no-calendars-description = Configure a calendar account using GNOME Online Accounts or a calendar app like Evolution.
+refresh-section = Force remote sync
+refresh-now = Force sync manually
+refreshing = Syncing...
+auto-refresh = Auto-force remote sync
+refresh-interval = Interval
+refresh-interval-5m = Every 5 minutes
+refresh-interval-10m = Every 10 minutes
+refresh-interval-15m = Every 15 minutes
+refresh-interval-30m = Every 30 minutes
+refresh-summary-on = Every { $interval }m
+refresh-summary-off = Manual only
+refresh-description =
+    This applet reads cached calendar data from Evolution Data Server (EDS), which can sync with online calendars. Calendar apps like Evolution and GNOME calendar will trigger EDS to sync.
+
+    If this setting is enabled, the applet will also automatically trigger EDS to sync with the cloud. If you use another solution, or if you only use a local calendar, this may be redundant. 
+updated-unknown = Updated: unknown
+updated-just-now = Updated just now
+updated-minutes-ago = Updated { $minutes }m ago
+updated-hours-ago = Updated { $hours }h ago
+updated-days-ago = Updated { $days }d ago
+vertical-panel-notice = This applet works best in a horizontal panel where meeting info can be displayed inline.
+calendars-setup-tip = Remember to set up any online calendars you want to pull from in GNOME calendar/Online Accounts.
+keyboard-shortcut = Keyboard shortcut
+keyboard-shortcut-description = You can set up a system keyboard shortcut to instantly join your next meeting.
+keyboard-shortcut-instructions = Open COSMIC Settings → Keyboard → Custom Shortcuts and add a new shortcut with the following command:
+keyboard-shortcut-command = cosmic-calendar-schedule --join-next
+keyboard-shortcut-copy = Copy
+keyboard-shortcut-open-settings = Open Settings
+
+# Time display settings
+datetime-settings = Date & Time Settings
+time-display-section = Time display
+military-time = 24-hour time
+show-seconds = Show seconds
+show-weekday = Show weekday
+first-day-of-week = First day of week
+first-day-sunday = Sunday
+first-day-monday = Monday
+custom-format = Custom format
+custom-format-description = Use strftime format string (leave empty for default)
+
+# Calendar navigation
+previous-month = Previous month
+next-month = Next month
+today = Today
+
+# Panel display settings
+panel-show-weekday = Show day of week
+panel-show-year = Show year
+
+# Weather
+weather-section = Weather
+weather-not-configured = Not configured
+weather-search-placeholder = Search city...
+weather-clear = Remove city
+weather-current = Current weather
+
+# World Clock
+world-clock-section = World Clock
+world-clock-not-configured = Not configured
+world-clock-add = Add city
+world-clock-search-placeholder = Search city...
+world-clock-cities-count = { $count ->
+    [one] { $count } city
+    *[other] { $count } cities
+}

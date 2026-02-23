@@ -1,0 +1,24 @@
+Source: cosmic-calendar-schedule
+Section: x11
+Priority: optional
+Maintainer: Artem Bogdanov <git@bogdart.com>
+Build-Depends: debhelper-compat (= 13),
+               cargo,
+               rustc,
+               libssl-dev,
+               pkg-config
+Standards-Version: 4.6.2
+Homepage: https://github.com/bogdart/calendar-schedule-cosmic
+Rules-Requires-Root: no
+
+Package: cosmic-calendar-schedule
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends},
+         evolution-data-server
+Description: Calendar and schedule panel applet for COSMIC desktop
+ A panel applet for the COSMIC desktop environment that displays
+ the current date and time, with a popup showing a calendar grid
+ and your upcoming events.
+ .
+ Features include calendar navigation, day-by-day event viewing,
+ one-click join for video calls, and flexible display options.
